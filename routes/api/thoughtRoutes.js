@@ -1,5 +1,6 @@
 const router = require('express').Router();
 
+// CRUD variables for Thought routes including CD for Reaction doc
 const {
     getThoughts,
     getSingleThought,
@@ -25,6 +26,7 @@ router.use('/:thoughtId')
 router.use('/:thoughtId/reactions')
     .post(postReaction);
 
+// api/thoughts/:thoughtId/reactions/:reactionId
 router.use('/:thoughtId/reactions/:reactionId')
     .delete(deleteReaction);
 
