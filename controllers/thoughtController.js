@@ -20,13 +20,13 @@ module.exports = {
         )
         .catch((err) => res.status(500).json(err)); 
     },
-    // POST a new Thought
+    // POST (create) a new Thought
     createThought(req, res) {
         Thought.create(req.body)
             .then((thought) => {
                 User.findOneAndUpdate(
                     { _id:req.params.userId },
-                    { $addToSet: { thoughtText: thought._id  } },
+                    { $addToSet: { thoughts: thought._id } },
                     { new: true},
                     (err, result) => {
                         if (result) {
@@ -63,7 +63,7 @@ module.exports = {
             .catch((err) => res.json(err));
     },
 
-    // POST reaction to a thought
+    // POST Reaction to a Thought
     postReaction(req, res) {
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
@@ -77,7 +77,7 @@ module.exports = {
             )
             .catch((err) => res.status(500).json(err));
     },
-    // DELETE reactions from a thought
+    // DELETE Reactions from a Thought
     deleteReaction(req, res) {
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
