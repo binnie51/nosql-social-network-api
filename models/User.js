@@ -13,6 +13,7 @@ const userSchema = new Schema(
             type: String,
             required: true,
             unique: true,
+            match: /.+\@.+\..+/,
 
         },
         thoughts: [
@@ -27,7 +28,13 @@ const userSchema = new Schema(
                 ref : 'User',
             }
         ]
-    }
+    },
+    {
+        toJSON: {
+            virtuals: true,
+        },
+        id: false,
+    },
 );
 
 // Create a virtual property `friendCount` that retrieves the length of user's friends 
@@ -36,6 +43,6 @@ userSchema.virtual('friendCount')
         return this.friends.length;
     });
 
-const User = model('user', userSchema);
+const User = model('User', userSchema);
 
 module.exports = User;
