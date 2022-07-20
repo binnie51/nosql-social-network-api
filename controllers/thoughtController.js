@@ -36,7 +36,7 @@ module.exports = {
                             console.log('Something failed!')
                         }
                     })
-                res.json(thought)
+                res.json(thought);
             })   
             .catch((err) => res.status(500).json(err));
     },
