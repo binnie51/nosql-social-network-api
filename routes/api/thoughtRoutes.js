@@ -12,22 +12,22 @@ const {
 } = require('../../controllers/thoughtController');
 
 // api/thoughts
-router.use('/')
+router.route('/')
     .get(getThoughts)
     .post(createThought);
 
 // api/thoughts/:thoughtId
-router.use('/:thoughtId')
+router.route('/:thoughtId')
     .get(getSingleThought)
     .put(updateThought)
     .delete(deleteThought);
 
 // api/thoughts/:thoughtId/reactions
-router.use('/:thoughtId/reactions')
+router.route('/:thoughtId/reactions')
     .post(postReaction);
 
 // api/thoughts/:thoughtId/reactions/:reactionId
-router.use('/:thoughtId/reactions/:reactionId')
+router.route('/:thoughtId/reactions/:reactionId')
     .delete(deleteReaction);
 
 module.exports = router;
