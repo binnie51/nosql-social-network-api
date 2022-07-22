@@ -13,17 +13,17 @@ https://github.com/binnie51/nosql-social-network-api.git
 
 ## Usage 
 1. Clone this repo by copy and paste its http or ssh and git clone + url/shh to your terminal. You may also want to fork this repo as an alternative.
-2. Run the server by typing `node server` on your terminal. Make sure to have Node installed beforehand.
-3. Customize the database to your liking on Insomnia.
+2. Run the server by typing `node server` on your terminal. Make sure to have Node.js installed beforehand.
+3. Run the full CRUD operations on the API and customize the database to your liking by using Insomnia.
 
 ## Demo
-GET all Users and a User with specific ID. GET all Thoughts and a Thought with specific ID. 
+### GET all Users and a User with specific ID. GET all Thoughts and a Thought with specific ID. 
 
-POST a User, and a Thought.
+### POST a User, and a Thought.
 
-PUT a User, a Thought.
+### PUT a User, a Thought.
 
-DELETE a User, a Thought, a Reaction, a Friend.
+### DELETE a User, a Thought, a Reaction, a Friend.
 ## License
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) <br/>
 Copyright (c) Vincent Tjia. All rights reserved.
