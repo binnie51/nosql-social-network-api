@@ -24,20 +24,17 @@ module.exports = {
     createThought(req, res) {
         Thought.create(req.body)
             .then((thought) => {
-                User.findOneAndUpdate(
-                    { _id:req.params.userId },
+                return User.findOneAndUpdate(
+                    { _id: req.body.userId },
                     { $addToSet: { thoughts: thought._id } },
-                    { new: true},
-                    (err, result) => {
-                        if (result) {
-                            console.log(`Thought updated in ${req.body.userId}.`)
-                        }
-                        else {
-                            console.log('Something failed!')
-                        }
-                    })
-                res.json(thought);
+                    { new: true}
+                    );
             })   
+            .then((user) =>
+                !user
+                    ? res.status(404).json({ message: 'Thought created, but found no user with that ID!' })
+                    : res.status(200).json(user)
+            )
             .catch((err) => res.status(500).json(err));
     },
     // UPDATE a Thought with certain thoughtId (come back to this)
@@ -67,8 +64,8 @@ module.exports = {
     postReaction(req, res) {
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
-            { $push: { 'reactions': req.body } },
-            { new: true }
+            { $push: { reactions: req.body } },
+            { new: true, runValidators: true }
         )
             .then((thought) => 
                 !thought
