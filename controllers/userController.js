@@ -88,7 +88,7 @@ module.exports = {
                     ? res.status(404).json({ message: 'No user found with such ID!' })
                     : res.stutus(200).json(user)
             )
-            .catch((err) => res.status(500).json(err));
+            .catch((err) => res.json(err));
     },
     // DELETE (remove) User's friend
     deleteFriend(req, res) {

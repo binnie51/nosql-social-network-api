@@ -18,12 +18,17 @@ https://github.com/binnie51/nosql-social-network-api.git
 
 ## Demo
 ### GET all Users and a User with specific ID. GET all Thoughts and a Thought with specific ID. 
-
-### POST a User, and a Thought.
-
+![start-GET](./demo/noSQL%20social%20startGet.gif)<br/>
+Video link [here](https://watch.screencastify.com/v/RJ91knGQ7xsmwvBeIdEu)
+### POST a User, and a Thought. Add Friend and Reaction
+![POST](./demo/noSQL%20social%20POST.gif)<br/>
+Video link [here](https://watch.screencastify.com/v/nyhPIlCRdG6JwSItavOJ)
 ### PUT a User, a Thought.
-
+![PUT](./demo/noSQL%20social%20PUT.gif)<br/>
+Video link [here](https://watch.screencastify.com/v/9PVFoUQqqMNrBmeTDlBC)
 ### DELETE a User, a Thought, a Reaction, a Friend.
+![DELETE](./demo/noSQL%20social%20DELETE.gif)<br/>
+Video link [here](https://watch.screencastify.com/v/CIokFe77QTbNZloCVHLd)
 ## License
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) <br/>
 Copyright (c) Vincent Tjia. All rights reserved.
